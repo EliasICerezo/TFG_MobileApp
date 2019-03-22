@@ -6,12 +6,14 @@ import { Routes } from "@angular/router";
 import { StartComponent } from "./start/start.component";
 import { MainComponent } from "./main/main.component";
 import { SelectorComponent } from "./selector/selector.component";
+import { AdvertenciasComponent } from "./advertencias/advertencias.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/start", pathMatch: "full" },
     { path: "start", component: StartComponent },
     { path: "main", component: MainComponent},
-    { path: "selector", component: SelectorComponent}
+    { path: "selector", component: SelectorComponent},
+    { path: "advertencias", component: AdvertenciasComponent}
 ];
 
 @NgModule({

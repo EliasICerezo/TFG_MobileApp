@@ -1,1 +1,9 @@
-<Button text="selector works!" class="btn btn-primary"></Button>
+<FlexboxLayout>
+    <StackLayout class="form">
+        <Image src="~/images/galeria.jpg" (tap)="escoger_de_galeria()" ></Image>
+        <Button text = "Abrir galeria" class="btn_gal" (tap)="escoger_de_galeria()"></Button>
+        <Image src="~/images/camara.jpg" (tap)="tomar_foto()"></Image>
+        <Button text = "Tomar foto" class="btn_foto" (tap)="tomar_foto()"></Button>
+    </StackLayout>
+
+</FlexboxLayout>

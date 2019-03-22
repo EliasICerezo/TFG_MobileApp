@@ -1,9 +1,9 @@
 <FlexboxLayout>
     <StackLayout class="form">
-        <Image src="~/images/atencion.jpg" ></Image>
-        <Button text = "advertencias" class="btn-adv"></Button>
-        <Image src="~/images/analizar.jpg" ></Image>
-        <Button text = "analizar imagen" class="btn-analizar"></Button>
+        <Image src="~/images/atencion.jpg" (tap)="advertencias()" ></Image>
+        <Button text = "advertencias" class="btn-adv" (tap)="advertencias()"></Button>
+        <Image src="~/images/analizar.jpg" (tap)="analizar()"></Image>
+        <Button text = "analizar imagen" class="btn-analizar" (tap)="analizar()"></Button>
     </StackLayout>
 
 </FlexboxLayout>
