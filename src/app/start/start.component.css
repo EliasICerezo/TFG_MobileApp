@@ -1,0 +1,12 @@
+/* Add mobile styles for the component here.  */
+FlexboxLayout {
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url("~/images/background.jpg");
+}
+
+Image {
+    margin-bottom: 20;
+    height: 200;
+}
