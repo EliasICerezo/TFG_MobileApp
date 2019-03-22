@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Page } from 'tns-core-modules/ui/page/page';
 import * as imagepicker from "nativescript-imagepicker";
+import * as camera from "nativescript-camera";
+import { ImageAsset } from 'tns-core-modules/image-asset/image-asset';
 
 @Component({
   selector: 'ns-selector',
@@ -17,6 +19,7 @@ export class SelectorComponent implements OnInit {
   isSingleMode: boolean = true;
   thumbSize: number = 80;
   previewSize: number = 300;
+  imageTaken: ImageAsset;
 
 
   constructor(private page: Page) { }
@@ -30,7 +33,25 @@ export class SelectorComponent implements OnInit {
       mode: "single"
     });
     this.startSelection(context);
-  }
+  };
+
+  tomar_foto(){
+    let options = {
+      width: 300,
+      height: 300,
+      keepAspectRatio: true,
+      saveToGallery: false
+  };
+    
+    camera.takePicture(options)
+        .then(imageAsset => {
+          this.imageTaken=imageAsset;
+          console.log("imagen tomada");
+          console.log(imageAsset);
+        }).catch(err=>{
+          console.log(err.message);
+        });
+  };
 
   private startSelection(context) {
     let that = this;
@@ -56,7 +77,7 @@ export class SelectorComponent implements OnInit {
       }).catch(function (e) {
         console.log(e);
       });
-  }
+  };
 
 
 }
