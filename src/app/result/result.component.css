@@ -1,0 +1,46 @@
+/* Add mobile styles for the component here.  */
+ScrollView {
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url("~/images/background.jpg");
+}
+
+Image {
+    margin-bottom: 0;
+    margin-top: 20;
+    height: 400;
+}
+
+.my-label {
+    background-color: #146ace;
+    color: rgb(255, 255, 255);
+    font-size: 15;
+    padding: 8;
+    text-align: center;
+    vertical-align: middle;
+    width: 80%;
+}
+
+.result {
+    background-color: #6f00ff;
+    color: rgb(255, 255, 255);
+    font-size: 15;
+    padding: 8;
+    text-align: center;
+    vertical-align: middle;
+    width: 80%;
+    margin: 25;
+}
+
+.advertencias {
+    background-color: #fbff00;
+    color: rgb(0, 0, 0);
+    font-size: 15;
+    padding: 8;
+    text-align: center;
+    vertical-align: middle;
+    width: 80%;
+    margin: 25;
+}
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Page } from 'tns-core-modules/ui/page/page';
 import * as imagepicker from "nativescript-imagepicker";
 import * as camera from "nativescript-camera";
@@ -6,6 +6,11 @@ import { ImageAsset } from 'tns-core-modules/image-asset/image-asset';
 import { request, getFile, getImage, getJSON, getString } from "tns-core-modules/http";
 import { Image } from "tns-core-modules/ui/image";
 import * as bghttp from "nativescript-background-http";
+import { ActivatedRoute, Router, ChildActivationEnd } from '@angular/router';
+import { ResultComponent } from '../result/result.component';
+import { componentHostSyntheticProperty } from '@angular/core/src/render3';
+import { ResultService } from '../shared/result.service';
+import { path } from 'tns-core-modules/file-system/file-system';
 
 @Component({
   selector: 'ns-selector',
@@ -24,11 +29,12 @@ export class SelectorComponent implements OnInit {
   previewSize: number = 300;
   imageTaken: ImageAsset;
 
+  constructor(private page: Page, private route: ActivatedRoute, private router: Router, private data:ResultService ) { }
 
-  constructor(private page: Page) { }
-
+  path:string
   ngOnInit() {
     this.page.actionBarHidden = true;
+    this.data.currentPath.subscribe(path => this.path = path)
   }
 
   escoger_de_galeria() {
@@ -53,7 +59,9 @@ export class SelectorComponent implements OnInit {
         var image = new Image();
         image.src = imageAsset;
         console.log("ESTE ES EL PATH DE LA IMAGEN:"+image.src._android);
-        this.sendImage(image.src._android);
+        this.data.changePath(image.src._android);
+        this.router.navigate(["/result"]);
+        //this.sendImage(image.src._android);
       }).catch((err) => {
         console.log("Error -> " + err.message);
       });
@@ -70,54 +78,14 @@ export class SelectorComponent implements OnInit {
       })
       .then((selection) => {
         that.imageSrc = that.isSingleMode && selection.length > 0 ? selection[0] : null;
-
-        this.sendImage(that.imageSrc._android);
-
-
-        // set the images to be loaded from the assets with optimal sizes (optimize memory usage)
-        selection.forEach(function (element) {
-          element.options.width = that.isSingleMode ? that.previewSize : that.thumbSize;
-          element.options.height = that.isSingleMode ? that.previewSize : that.thumbSize;
-        });
-
-        that.imageAssets = selection;
-
+        this.data.changePath(that.imageSrc._android);
+        this.router.navigate(["/result"]);
+        // this.sendImage(that.imageSrc._android);
       }).catch(function (e) {
         console.log(e);
       });
   };
 
-
-  private sendImage(path:string){
-    var session = bghttp.session("image-upload");
-    var request = {
-      url: "http://192.168.0.150:5000/test",
-      method: "POST",
-      headers: { "isMobile": "true" },
-      description: "Uploading an Image"
-    };
-    var task = session.uploadFile(path, request);
-    var params =[
-      { name: "image", filename: path, mimeType: "image/jpeg" }
-    ]
-    var task = session.multipartUpload(params,request);
-    task.on("responded", respondedHandler);
-    task.on("error", errorHandler);
-
-    function respondedHandler(e) {
-      alert("received " + e.responseCode + " code. Server sent: " + e.data);
-    }
-
-    function errorHandler(e) {
-      alert("received " + e.responseCode + " code.");
-      var serverResponse = e.response;
-    }
-    /*
-    -pasar el sendImage a la otra vista 
-    -ver como pasar ese string del path entre vistas
-    -result management
-    */ 
-  }
 
   
 

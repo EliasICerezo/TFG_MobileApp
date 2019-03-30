@@ -7,6 +7,7 @@ import { StartComponent } from './start/start.component';
 import { MainComponent } from './main/main.component';
 import { SelectorComponent } from './selector/selector.component';
 import { AdvertenciasComponent } from './advertencias/advertencias.component';
+import { ResultComponent } from './result/result.component';
 
 //Importing the international packages
 
@@ -32,7 +33,8 @@ import { AdvertenciasComponent } from './advertencias/advertencias.component';
         StartComponent,
         MainComponent,
         SelectorComponent,
-        AdvertenciasComponent
+        AdvertenciasComponent,
+        ResultComponent
     ],
     providers: [],
     schemas: [
