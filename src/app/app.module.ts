@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { SelectorComponent } from './selector/selector.component';
 import { AdvertenciasComponent } from './advertencias/advertencias.component';
 import { ResultComponent } from './result/result.component';
+import { HttpClientModule } from '@angular/common/http';
 
 //Importing the international packages
 
@@ -26,7 +27,8 @@ import { ResultComponent } from './result/result.component';
     ],
     imports: [
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule
     ],
     declarations: [
         AppComponent,

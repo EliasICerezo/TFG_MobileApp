@@ -1,13 +1,11 @@
 <ScrollView>
     <StackLayout class="form">
-        <Image src="{{ path }}" ></Image>
+        <Image class="original" src="{{ path }}" ></Image>
         <Label text="Imagen Enviada" class="my-label"></Label>
-        <Image src="{{ minimizedpath }}" ></Image>
+        <Image  class="analyzedImage" stretch="fill" src="{{ path }}" ></Image>
         <Label text="Imagen Analizada" class="my-label"></Label>
         <Label text="Resultados" class="result" ></Label>
-        <TextView class="resultBox" editable="false"></TextView>
+        <TextView class="resultBox" editable="false" text="{{resultado}}"></TextView>
         <Button  text="Advertencias" (tap)="redirectAdvertencias()" class="advertencias" ></Button>
     </StackLayout>
-
-    
 </ScrollView>

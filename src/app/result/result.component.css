@@ -6,7 +6,9 @@ ScrollView {
     background-image: url("~/images/background.jpg");
 }
 
-Image {
+
+
+.original {
     margin-bottom: 0;
     margin-top: 20;
     height: 400;
@@ -33,6 +35,11 @@ Image {
     margin: 25;
 }
 
+.resultBox{
+    background: white;
+    text-align: center;
+}
+
 .advertencias {
     background-color: #fbff00;
     color: rgb(0, 0, 0);
@@ -42,5 +49,12 @@ Image {
     vertical-align: middle;
     width: 80%;
     margin: 25;
+}
+
+.analyzedImage{
+    margin-bottom: 0;
+    margin-top: 20;
+    height: 224;
+    width: 224;
 }
 

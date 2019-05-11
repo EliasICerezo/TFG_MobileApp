@@ -8,9 +8,8 @@ import { Image } from "tns-core-modules/ui/image";
 import * as bghttp from "nativescript-background-http";
 import { ActivatedRoute, Router, ChildActivationEnd } from '@angular/router';
 import { ResultComponent } from '../result/result.component';
-import { componentHostSyntheticProperty } from '@angular/core/src/render3';
 import { ResultService } from '../shared/result.service';
-import { path } from 'tns-core-modules/file-system/file-system';
+
 
 @Component({
   selector: 'ns-selector',
@@ -52,7 +51,7 @@ export class SelectorComponent implements OnInit {
       keepAspectRatio: true,
       saveToGallery: false
     };*/
-
+    camera.requestPermissions()
     camera.takePicture().
       then((imageAsset) => {
         console.log("Result is an image asset instance");

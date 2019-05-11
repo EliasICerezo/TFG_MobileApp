@@ -17,7 +17,7 @@ export class StartComponent implements OnInit {
   }
 
   submit(){
-      this.router.navigate(["/main"])
+      this.router.navigate(["/advertencias"])
   }
 
 }
