@@ -1,11 +1,11 @@
 <ScrollView>
     <StackLayout class="form">
         <Image class="original" src="{{ path }}" ></Image>
-        <Label text="Imagen Enviada" class="my-label"></Label>
+        <Label text="{{ 'result.sent' | translate }}" class="my-label"></Label>
         <Image  class="analyzedImage" stretch="fill" src="{{ path }}" ></Image>
-        <Label text="Imagen Analizada" class="my-label"></Label>
-        <Label text="Resultados" class="result" ></Label>
+        <Label text="{{ 'result.analyze' | translate }}" class="my-label"></Label>
+        <Label text="{{ 'result.resulttext' | translate }}" class="result" ></Label>
         <TextView class="resultBox" editable="false" text="{{resultado}}"></TextView>
-        <Button  text="Advertencias" (tap)="redirectAdvertencias()" class="advertencias" ></Button>
+        <Button  text="{{ 'result.advertencias' | translate }}" (tap)="redirectAdvertencias()" class="advertencias" ></Button>
     </StackLayout>
 </ScrollView>

@@ -1,0 +1,20 @@
+{
+    "advertencias": {
+        "accept": "Acetpto. Analizar una imagen",
+        "advertencias": "esto eson unas advertencias",
+        "decline": "Rechazo. Salir"
+    },
+    "result": {
+        "advertencias": "Advertencias",
+        "analyze": "Imagen Analizada",
+        "resulttext": "Resultado",
+        "sent": "Imagen Enviada"
+    },
+    "selector": {
+        "gallery": "Abrir galeria",
+        "photo": "Tomar foto"
+    },
+    "start": {
+        "entrar": "entrar"
+    }
+}

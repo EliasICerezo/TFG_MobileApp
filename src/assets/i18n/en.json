@@ -1,0 +1,20 @@
+{
+    "advertencias": {
+        "accept": "Agree. Analyze an image",
+        "advertencias": "this is a disclaimer",
+        "decline": "Decline. Exit"
+    },
+    "result": {
+        "advertencias": "Disclaimer",
+        "analyze": "Analyzed Image",
+        "resulttext": "Veredict",
+        "sent": "Image Sent"
+    },
+    "selector": {
+        "gallery": "Open gallery",
+        "photo": "Take a picture"
+    },
+    "start": {
+        "entrar": "access"
+    }
+}

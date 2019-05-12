@@ -10,6 +10,9 @@ import { AdvertenciasComponent } from './advertencias/advertencias.component';
 import { ResultComponent } from './result/result.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { NativeScriptLoader } from '@danvick/ngx-translate-nativescript-loader';
+
 //Importing the international packages
 
 
@@ -28,7 +31,13 @@ import { HttpClientModule } from '@angular/common/http';
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: createTranslateLoader
+            }
+        })
     ],
     declarations: [
         AppComponent,
@@ -50,3 +59,6 @@ Pass your application module to the bootstrapModule function located in main.ts 
 
 export class AppModule { }
 
+export function createTranslateLoader() {
+    return new NativeScriptLoader("./assets/i18n/", ".json");
+}

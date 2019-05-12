@@ -1,10 +1,9 @@
 <FlexboxLayout>
     <StackLayout>
-        <TextView text="ASI ES COMO SE VE UN PUTO TEXTVIEW
-        esto es una nueva linea" editable="false"></TextView>
+        <TextView text="{{ 'advertencias.advertencias' | translate }}" editable="false"></TextView>
 
-        <Button class="btn btn-primary" text="Acepto las advertencias" (tap)="accept()" ></Button>
-        <Button class="btn decline" text="Rechazo las advertencias" (tap)="decline()"  ></Button>
+        <Button class="btn btn-primary" text="{{ 'advertencias.accept' | translate }}" (tap)="accept()" ></Button>
+        <Button class="btn decline" text="{{ 'advertencias.decline' | translate }}" (tap)="decline()"  ></Button>
     </StackLayout>
 </FlexboxLayout>
 
