@@ -25,7 +25,7 @@ export class ResultService {
     return new Observable((observer: any)=>{
       let session = BackgroundHttp.session("file-upload");
             let request = {
-                url: 'http://192.168.0.150:5000/test',
+                url: 'http://192.168.0.150:80/test',
                 method: "POST",
                 headers: {
                   "isMobile":"true"

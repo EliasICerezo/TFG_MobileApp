@@ -1,7 +1,7 @@
 {
     "advertencias": {
         "accept": "Agree. Analyze an image",
-        "advertencias": "this is a disclaimer",
+        "advertencias": "Do not self-medicate based on the results. This app does not diagnose the disease, it is an assistant. Go visit a professional to obtain true information. In case you obtain a non-favorable result, don’t panic. Go visit a professional to verify the result because this app has an error margin. The images sent must be framed, with good lighting, and the lesion that you want to analyze should be centered. If one or more of these conditions are not good enough you can obtain a wrong result. This application does not save any of the images sent. Also no personal data are required, so the use of this application is completely anonymous",
         "decline": "Decline. Exit"
     },
     "result": {

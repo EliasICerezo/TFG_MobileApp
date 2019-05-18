@@ -1,7 +1,7 @@
 {
     "advertencias": {
         "accept": "Acetpto. Analizar una imagen",
-        "advertencias": "esto eson unas advertencias",
+        "advertencias": "No se automedique en base a los resultados obtenidos. Esta aplicación no realiza un diagnóstico, es tan solo un asistente. Acuda a un profesional para obtener información veraz. En caso de que obtenga un resultado no favorable no se alarme, acuda a un profesional para verificar lo obtenido porque esta aplicación tiene un margen de error. Las imágenes que se envíen o se tomen deben estar encuadradas y con una buena iluminación y la lesión a analizar debe estar más o menos centrada pues si este no es el caso puede obtenerse un veredicto erróneo o fallido. Esta aplicación no guarda ninguna de las imágenes enviadas ni tampoco se le requiere ningún tipo de dato personal identificatorio, por tanto su uso es completamente anónimo.",
         "decline": "Rechazo. Salir"
     },
     "result": {
